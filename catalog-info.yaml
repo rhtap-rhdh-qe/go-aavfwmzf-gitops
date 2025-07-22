@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: go-aavfwmzf-gitops
+  description: This is GitOps manifest for go-aavfwmzf   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=go-aavfwmzf
+    backstage.io/kubernetes-id: go-aavfwmzf 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: go-aavfwmzf
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:go-aavfwmzf
